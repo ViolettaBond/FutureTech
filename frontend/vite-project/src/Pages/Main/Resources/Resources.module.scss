@@ -1,0 +1,125 @@
+@use '../../../styles/mixin' as *;
+@use '../../../styles/variables' as *;
+
+.resources {
+    width: 100%;
+    background: $dark-10;
+    padding: 60px 0;
+
+    .container {
+        width: 100%;
+        max-width: $max-width;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .header {
+        @include flex-center-between;
+        gap: 2rem;
+
+        .badge {
+            display: block;
+            width: fit-content;
+            padding: 10px 16px;
+            margin-bottom: 1rem;
+            background: $dark-20;
+            border-radius: 4px;
+            font-size: $fs-16;
+            font-weight: $fw-medium;
+            color: $white;
+        }
+
+        .title {
+            font-family: $kumbh;
+            font-size: $fs-40;
+            font-weight: $fw-medium;
+            color: $white;
+            max-width: 900px;
+        }
+
+        .viewAllBtn {
+            @include flex-center;
+            gap: 0.75rem;
+            padding: 14px 24px;
+            background: $dark-20;
+            border: 1px solid $dark-15;
+            border-radius: 8px;
+            font-size: $fs-16;
+            font-weight: $fw-medium;
+            color: $white;
+            text-decoration: none;
+            flex-shrink: 0;
+
+            img {
+                width: 16px;
+                height: 16px;
+            }
+
+            &:hover {
+                border-color: $yellow-55;
+            }
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 3rem;
+        background: $dark-08;
+        border: 1px solid $dark-15;
+        border-radius: 12px;
+
+        > img {
+            width: 60px;
+            height: 60px;
+        }
+
+        h3 {
+            font-family: $kumbh;
+            font-size: $fs-24;
+            font-weight: $fw-medium;
+            color: $white;
+        }
+
+        p {
+            font-size: $fs-16;
+            color: $grey-50;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .downloadBtn {
+            @include flex-center;
+            gap: 0.75rem;
+            width: fit-content;
+            padding: 14px 24px;
+            background: $dark-10;
+            border: 1px solid $dark-15;
+            border-radius: 8px;
+            font-size: $fs-16;
+            font-weight: $fw-medium;
+            color: $white;
+            text-decoration: none;
+            transition: border-color 0.2s;
+
+            img {
+                width: 16px;
+                height: 16px;
+            }
+
+            &:hover {
+                border-color: $yellow-55;
+            }
+        }
+    }
+}

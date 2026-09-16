@@ -1,0 +1,32 @@
+@use '../../../styles/mixin' as *;
+@use '../../../styles/variables' as *;
+
+.hero {
+    width: 100%;
+    min-height: 40vh;
+    @include flex-center;
+
+    .container {
+        width: 100%;
+        max-width: $max-width;
+
+        .title {
+            font-size: $fs-80;
+            font-weight: $fw-medium;
+            color: $white;
+        }
+
+        .text {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .description {
+                width: 70%;
+                font-size: $fs-18;
+                font-weight: $fw-regular;
+                color: $grey-60;
+            }
+        }
+    }
+}

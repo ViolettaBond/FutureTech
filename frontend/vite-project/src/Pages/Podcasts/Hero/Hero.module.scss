@@ -1,0 +1,29 @@
+@use '../../../styles/mixin' as *;
+@use '../../../styles/variables' as *;
+
+.hero {
+    width: 100%;
+    min-height: 50vh;
+    @include flex-center;
+
+    .container {
+        width: 100%;
+        max-width: 1596px;
+
+        .title {
+            font-family: $kumbh;
+            font-weight: $fw-medium;
+            font-size: $fs-80;
+        }
+
+        .textHero {
+            width: 100%;
+            @include flex-center-between;
+
+            .description {
+                font-weight: $fw-regular;
+                color: $grey;
+            }
+        }
+    }
+}

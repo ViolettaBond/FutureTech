@@ -1,0 +1,9 @@
+@use '../../styles/mixin' as *;
+@use '../../styles/variables' as *;
+
+.home {
+    width: 100%;
+    background: $dark-08;
+    display: flex;
+    flex-direction: column;
+}

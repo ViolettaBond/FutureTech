@@ -1,0 +1,18 @@
+@use '../../styles/mixin' as *;
+@use '../../styles/variables' as *;
+
+.contact {
+    width: 100%;
+    background: $dark-08;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    .container {
+        width: 100%;
+        max-width: $max-width;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+}

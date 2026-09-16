@@ -1,0 +1,188 @@
+@use '../../../styles/mixin' as *;
+@use '../../../styles/variables' as *;
+
+.hero {
+    width: 100%;
+    background: $dark-08;
+    padding: 60px 0;
+
+    .container {
+        width: 100%;
+        max-width: $max-width;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .body {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        max-width: 900px;
+
+        .subtitle {
+            font-family: $kumbh;
+            font-size: $fs-24;
+            font-weight: $fw-medium;
+            color: $grey-50;
+        }
+
+        .title {
+            font-family: $kumbh;
+            font-size: $fs-58;
+            font-weight: $fw-medium;
+            color: $white;
+            line-height: 1.1;
+        }
+
+        .description {
+            font-size: $fs-18;
+            color: $grey-50;
+            line-height: 1.6;
+        }
+    }
+
+    .metrics {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 1px solid $dark-15;
+        border-radius: 12px;
+        overflow: hidden;
+
+        .metric {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 0.5rem;
+            padding: 2rem;
+
+            &:not(:last-child) {
+                border-right: 1px solid $dark-15;
+            }
+
+            .metricLabel {
+                font-size: $fs-16;
+                color: $grey-50;
+            }
+
+            .metricValue {
+                font-family: $kumbh;
+                font-size: $fs-40;
+                font-weight: $fw-medium;
+                color: $white;
+
+                .metricSign {
+                    color: $yellow-55;
+                }
+            }
+        }
+    }
+
+    .preview {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+        background: $dark-10;
+        border: 1px solid $dark-15;
+        border-radius: 12px;
+
+        .team {
+            display: flex;
+
+            img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: 2px solid $dark-40;
+
+                &:not(:first-child) {
+                    margin-left: -15px;
+                }
+            }
+        }
+
+        .previewBody {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            .previewTitle {
+                font-size: $fs-20;
+                font-weight: $fw-medium;
+                color: $white;
+            }
+
+            .previewSubtitle {
+                font-size: $fs-16;
+                color: $grey-50;
+            }
+        }
+
+        .previewBtn {
+            @include flex-center;
+            gap: 0.75rem;
+            padding: 14px 24px;
+            background: $dark-20;
+            border: 1px solid $dark-15;
+            border-radius: 8px;
+            font-size: $fs-16;
+            font-weight: $fw-medium;
+            color: $white;
+            text-decoration: none;
+            transition: border-color 0.2s;
+
+            img {
+                width: 16px;
+                height: 16px;
+            }
+
+            &:hover {
+                border-color: $yellow-55;
+            }
+        }
+    }
+
+    .advantages {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 1px solid $dark-15;
+        border-radius: 12px;
+        overflow: hidden;
+
+        .advantageCard {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 2rem;
+
+            &:not(:last-child) {
+                border-right: 1px solid $dark-15;
+            }
+
+            img {
+                width: 50px;
+                height: 50px;
+            }
+
+            h3 {
+                font-size: $fs-20;
+                font-weight: $fw-medium;
+                color: $white;
+            }
+
+            .advantageSubtitle {
+                font-size: $fs-16;
+                color: $grey-50;
+            }
+
+            .advantageDetails {
+                font-size: $fs-16;
+                color: $grey-60;
+                line-height: 1.5;
+            }
+        }
+    }
+}

@@ -1,0 +1,148 @@
+.globalClimate {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.globalClimate .container {
+  width: 100%;
+  max-width: 1596px;
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.globalClimate .container .topGlobal {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.globalClimate .container .topGlobal img {
+  width: 515px;
+  height: 427px;
+}
+.globalClimate .container .topGlobal .rightGlobal {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.globalClimate .container .topGlobal .rightGlobal .title {
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+.globalClimate .container .topGlobal .rightGlobal .summary {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #98989a;
+}
+.globalClimate .container .topGlobal .rightGlobal .publication {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.globalClimate .container .topGlobal .rightGlobal .publication .infoPubl {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #98989a;
+}
+.globalClimate .container .topGlobal .rightGlobal .publication .infoPubl .info {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #fff;
+}
+.globalClimate .container .topGlobal .rightGlobal .actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.globalClimate .container .topGlobal .rightGlobal .actions .reactions {
+  display: flex;
+  gap: 2rem;
+}
+.globalClimate .container .topGlobal .rightGlobal .actions .reactions .reaction {
+  cursor: pointer;
+  padding: 15px 20px;
+  border-radius: 100px;
+  border: 1px solid #262626;
+  background: #1a1a1a;
+  font-size: 1.8rem;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+  color: #98989a;
+}
+.globalClimate .container .topGlobal .rightGlobal .actions .btnMore {
+  cursor: pointer;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  background: #141414;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #98989a;
+  padding: 15px;
+}
+.globalClimate .container .bottomGlobal {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.globalClimate .container .bottomGlobal .imageBottom {
+  width: 512px;
+  height: 222px;
+}
+.globalClimate .container .bottomGlobal .textBottom {
+  padding: 15px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.globalClimate .container .bottomGlobal .textBottom .subtitle {
+  font-size: 2rem;
+  font-family: 600;
+  color: #fff;
+}
+.globalClimate .container .bottomGlobal .textBottom .category {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #98989a;
+}
+.globalClimate .container .bottomGlobal .statsBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.globalClimate .container .bottomGlobal .statsBlock .stats {
+  display: flex;
+  gap: 2rem;
+}
+.globalClimate .container .bottomGlobal .statsBlock .stats .statItem {
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1px solid #262626;
+  background: #1a1a1a;
+}
+.globalClimate .container .bottomGlobal .statsBlock .btnReadMore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 277px;
+  height: 63px;
+  border-radius: 12px;
+  border: 1px solid #262626;
+  background: #141414;
+  color: #98989a;
+  cursor: pointer;
+}/*# sourceMappingURL=GlobalClimate.module.css.map */

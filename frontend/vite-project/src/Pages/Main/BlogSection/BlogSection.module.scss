@@ -1,0 +1,106 @@
+@use '../../../styles/mixin' as *;
+@use '../../../styles/variables' as *;
+
+.blogSection {
+    width: 100%;
+    background: $dark-08;
+    padding: 60px 0;
+
+    .container {
+        width: 100%;
+        max-width: $max-width;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .header {
+        @include flex-center-between;
+        gap: 2rem;
+
+        .badge {
+            display: block;
+            width: fit-content;
+            padding: 10px 16px;
+            margin-bottom: 1rem;
+            background: $dark-20;
+            border-radius: 4px;
+            font-size: $fs-16;
+            font-weight: $fw-medium;
+            color: $white;
+        }
+
+        .title {
+            font-family: $kumbh;
+            font-size: $fs-40;
+            font-weight: $fw-medium;
+            color: $white;
+            max-width: 800px;
+        }
+
+        .viewAllBtn {
+            @include flex-center;
+            gap: 0.75rem;
+            padding: 14px 24px;
+            background: $dark-20;
+            border: 1px solid $dark-15;
+            border-radius: 8px;
+            font-size: $fs-16;
+            font-weight: $fw-medium;
+            color: $white;
+            text-decoration: none;
+            flex-shrink: 0;
+            transition: border-color 0.2s;
+
+            img {
+                width: 16px;
+                height: 16px;
+            }
+
+            &:hover {
+                border-color: $yellow-55;
+            }
+        }
+    }
+
+    .tabs {
+        display: flex;
+        gap: 0.5rem;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+
+        .tab {
+            padding: 14px 24px;
+            background: $dark-10;
+            border: 1px solid $dark-15;
+            border-radius: 8px;
+            font-size: $fs-16;
+            font-weight: $fw-medium;
+            color: $grey-60;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.2s;
+
+            &:hover {
+                color: $white;
+                border-color: $yellow-55;
+            }
+
+            &.active {
+                background: $dark-20;
+                color: $white;
+            }
+        }
+    }
+
+    .placeholder {
+        font-size: $fs-16;
+        color: $grey-50;
+
+        strong {
+            color: $white;
+        }
+    }
+}

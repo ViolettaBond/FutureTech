@@ -1,0 +1,211 @@
+@use '../../../styles/mixin' as *;
+@use '../../../styles/variables' as *;
+
+.discover {
+    width: 100%;
+    min-height: 220vh;
+    @include flex-center;
+    flex-direction: column;
+
+    .content {
+        width: 100%;
+        height: 400px;
+        background: $dark-10;
+        @include flex-center;
+
+        .inner {
+            width: 100%;
+            max-width: $max-width;
+            @include flex-center-between;
+            .textBlock {
+                width: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                .subtitle {
+                    padding: 10px;
+                    width: 282px;
+                    height: 42px;
+                    background: $dark-20;
+                    border-radius: 4px;
+                    font-size: $fs-20;
+                    font-weight: $fw-medium;
+                    color: $white;
+                }
+
+                .title {
+                    font-family: $kumbh;
+                    font-weight: $fw-medium;
+                    font-size: $fs-58;
+                    color: $white;
+                }
+            }
+
+            .link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1rem;
+                width: 193px;
+                height: 63px;
+                border-radius: 12px;
+                background: $dark-08;
+                border: 1px solid $dark-15;
+                font-size: $fs-18;
+                color: $grey-60;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+
+    .container {
+        width: 100%;
+        max-width: $max-width;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .filters {
+            height: 207px;
+            @include flex-center-between;
+
+            button {
+                width: 249px;
+                height: 87px;
+                border: 1px solid $dark-15;
+                border-radius: 8px;
+                background: none;
+                font-size: $fs-18;
+                font-weight: $fw-regular;
+                color: $grey-60;
+                cursor: pointer;
+            }
+
+            button.active {
+                background: $dark-10;
+                font-weight: $fw-medium;
+                color: $white;
+            }
+        }
+
+        .articles {
+            width: 100%;
+            .card {
+                width: 100%;
+                padding: 40px 0px;
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid $dark-15;
+                .author {
+                    width: 294px;
+                    display: flex;
+                    height: 80px;
+                    gap: 1rem;
+                    img {
+                        width: 80px;
+                        height: 80px;
+                    }
+
+                    .textCard {
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                        gap: 1rem;
+
+                        .authorName {
+                            font-size: $fs-20;
+                            font-weight: $fw-semibold;
+                            color: $white;
+                        }
+
+                        .category {
+                            font-size: $fs-18;
+                            color: $grey-60;
+                        }
+                    }
+                }
+
+                .body {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 942px;
+                    height: 236px;
+
+                    .date {
+                        font-size: $fs-20;
+                        font-weight: $fw-semibold;
+                        color: $grey-60;
+                    }
+
+                    .contentBlock {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+
+                        .cardTitle {
+                            font-size: $fs-26;
+                            font-weight: $fw-semibold;
+                            color: $white;
+                        }
+
+                        .description {
+                            font-size: $fs-18;
+                            font-weight: $fw-regular;
+                            color: $grey-60;
+                        }
+                    }
+
+                    .reactions {
+                        width: 30%;
+                        @include flex-center-between;
+
+                        .reaction {
+                            padding: 12px;
+                            background: $dark-10;
+                            border: 1px solid $dark-15;
+                            border-radius: 100px;
+                            @include flex-center;
+                            gap: 1rem;
+
+                            img {
+                                cursor: pointer;
+                                width: 24px;
+                                height: 24px;
+                            }
+
+                            font-size: $fs-18;
+                            font-family: $kumbh;
+                            font-weight: $fw-regular;
+                            color: $grey-60;
+                        }
+                    }
+                }
+
+                .actions {
+                    display: flex;
+                    align-items: center;
+
+                    .readMore {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 1rem;
+                        width: 193px;
+                        height: 63px;
+                        border-radius: 12px;
+                        background: $dark-08;
+                        border: 1px solid $dark-15;
+                        font-size: $fs-18;
+                        color: $grey-60;
+                    }
+                }
+            }
+        }
+    }
+}
