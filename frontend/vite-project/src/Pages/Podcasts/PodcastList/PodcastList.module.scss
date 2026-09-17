@@ -4,193 +4,174 @@
 .podcastList {
     width: 100%;
     background: $dark-08;
-    padding: 60px 0;
+    padding: 6rem 0;
 
     .container {
         width: 100%;
         max-width: $max-width;
         margin: 0 auto;
-        padding: 0 20px;
-    }
 
-    .list {
-        display: flex;
-        flex-direction: column;
-        border: 1px solid $dark-15;
-        border-radius: 12px;
-        overflow: hidden;
-    }
+        .list {
+            display: flex;
+            flex-direction: column;
+            border-radius: 1.2rem;
 
-    .card {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 3rem;
-        padding: 3rem;
-        background: $dark-08;
+            .card {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 3rem;
+                padding: 3.2rem 0;
+                border-bottom: 1px solid $dark-15;
 
-        &:not(:last-child) {
-            border-bottom: 1px solid $dark-15;
-        }
-    }
-
-    .left {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-
-        .icon {
-            width: 48px;
-            height: 48px;
-        }
-
-        .titleRow {
-            @include flex-center-between;
-            gap: 1.5rem;
-
-            .title {
-                font-family: $kumbh;
-                font-size: $fs-24;
-                font-weight: $fw-medium;
-                color: $white;
-            }
-
-            .rating {
-                display: flex;
-                gap: 4px;
-                color: $yellow-55;
-                font-size: $fs-16;
-                flex-shrink: 0;
-            }
-        }
-
-        .hostBox {
-            @include flex-center-between;
-            gap: 1.5rem;
-            padding: 1rem 1.25rem;
-            background: $dark-10;
-            border: 1px solid $dark-15;
-            border-radius: 8px;
-
-            .hostInfo {
-                display: flex;
-                flex-direction: column;
-                gap: 0.25rem;
-
-                .hostLabel {
-                    font-size: $fs-16;
-                    color: $grey-50;
+                &:last-child {
+                    border-bottom: none;
                 }
 
-                .hostName {
-                    font-size: $fs-16;
-                    font-weight: $fw-medium;
-                    color: $white;
-                }
-            }
+                .left {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+                    padding-right: 3rem;
+                    border-right: 1px solid $dark-15;
 
-            .listenBtn {
-                @include flex-center;
-                gap: 0.5rem;
-                padding: 10px 16px;
-                background: transparent;
-                border: 1px solid $dark-15;
-                border-radius: 6px;
-                font-size: $fs-16;
-                font-weight: $fw-medium;
-                color: $white;
-                cursor: pointer;
-                transition: border-color 0.2s;
+                    .icon {
+                        width: 4.8rem;
+                        height: 4.8rem;
+                    }
 
-                img {
-                    width: 14px;
-                    height: 14px;
-                }
+                    .titleRow {
+                        @include flex-center-between;
+                        gap: 1.5rem;
 
-                &:hover {
-                    border-color: $yellow-55;
-                }
-            }
-        }
-    }
+                        .title {
+                            min-width: 0;
+                            font-family: $kumbh;
+                            font-size: $fs-40;
+                            font-weight: $fw-medium;
+                            color: $white;
+                        }
 
-    .right {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
+                        .rating {
+                            display: flex;
+                            flex-shrink: 0;
+                            gap: 0.4rem;
+                            color: $yellow-55;
+                            font-size: $fs-18;
+                            padding: 8px;
+                            border-radius: 10rem;
+                            border: 1px solid $dark-15;
+                        }
+                    }
 
-        .imageWrap {
-            position: relative;
-            width: 100%;
+                    .hostBox {
+                        @include flex-center-between;
+                        gap: 1.5rem;
+                        padding: 1rem 1.25rem;
+                        background: $dark-10;
+                        border: 1px solid $dark-15;
+                        border-radius: 0.8rem;
 
-            > img {
-                width: 100%;
-                height: 260px;
-                object-fit: cover;
-                border-radius: 12px;
-                display: block;
-            }
+                        .hostInfo {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.25rem;
 
-            .playBtn {
-                @include flex-center;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 56px;
-                height: 56px;
-                background: $white;
-                border: none;
-                border-radius: 50%;
-                cursor: pointer;
-                transition: transform 0.2s;
+                            .hostLabel {
+                                font-size: $fs-18;
+                                color: $grey-50;
+                            }
 
-                img {
-                    width: 20px;
-                    height: 20px;
-                }
+                            .hostName {
+                                font-size: $fs-18;
+                                font-weight: $fw-medium;
+                                color: $white;
+                            }
+                        }
 
-                &:hover {
-                    transform: translate(-50%, -50%) scale(1.05);
-                }
-            }
-        }
+                        .listenBtn {
+                            @include flex-center;
+                            gap: 0.5rem;
+                            padding: 1rem 1.6rem;
+                            background: transparent;
+                            border: 1px solid $dark-15;
+                            border-radius: 0.6rem;
+                            font-size: $fs-16;
+                            font-weight: $fw-medium;
+                            color: $white;
+                            cursor: pointer;
+                            transition: 0.2s;
 
-        .subtitle {
-            font-size: $fs-18;
-            font-weight: $fw-medium;
-            color: $white;
-        }
+                            img {
+                                width: 1.4rem;
+                                height: 1.4rem;
+                            }
 
-        .description {
-            font-size: $fs-16;
-            font-weight: $fw-regular;
-            color: $grey-50;
-            line-height: 1.6;
-        }
-
-        .meta {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-
-            .metaItem {
-                padding: 1rem;
-                background: $dark-10;
-                border: 1px solid $dark-15;
-                border-radius: 8px;
-                display: flex;
-                flex-direction: column;
-                gap: 0.5rem;
-
-                span {
-                    font-size: $fs-16;
-                    color: $grey-50;
+                            &:hover {
+                                border-color: $yellow-55;
+                                color: $yellow-55;
+                            }
+                        }
+                    }
                 }
 
-                strong {
-                    font-size: $fs-18;
-                    font-weight: $fw-medium;
-                    color: $white;
+                .right {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+
+                    .imageWrap {
+                        position: relative;
+                        width: 100%;
+
+                        > img {
+                            display: block;
+                            width: 100%;
+                            height: 36rem;
+                            object-fit: cover;
+                            border-radius: 0.8rem;
+                            cursor: pointer;
+                        }
+                    }
+
+                    .subtitle {
+                        font-size: $fs-26;
+                        font-weight: $fw-medium;
+                        color: $white;
+                    }
+
+                    .description {
+                        font-size: $fs-18;
+                        font-weight: $fw-regular;
+                        color: $grey-50;
+                        line-height: 1.6;
+                    }
+
+                    .meta {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 1rem;
+
+                        .metaItem {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.5rem;
+                            padding: 1rem;
+                            background: $dark-10;
+                            border: 1px solid $dark-15;
+                            border-radius: 13px;
+
+                            span {
+                                font-size: $fs-16;
+                                color: $grey-50;
+                            }
+
+                            strong {
+                                font-size: $fs-18;
+                                font-weight: $fw-medium;
+                                color: $white;
+                            }
+                        }
+                    }
                 }
             }
         }

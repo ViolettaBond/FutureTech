@@ -8,141 +8,140 @@
         width: 100%;
         max-width: $max-width;
         margin: 0 auto;
-        padding: 0 20px;
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: 3rem;
-        align-items: start;
-    }
+        align-items: center;
 
-    .left {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-
-        .icon {
-            width: 60px;
-            height: 60px;
-        }
-
-        h2 {
-            font-family: $kumbh;
-            font-size: $fs-40;
-            font-weight: $fw-medium;
-            color: $white;
-            line-height: 1.2;
-        }
-    }
-
-    .right {
-        width: 100%;
-    }
-
-    .form {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.5rem;
-    }
-
-    .field {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-
-        label {
-            font-size: $fs-16;
-            font-weight: $fw-medium;
-            color: $white;
-        }
-
-        input,
-        textarea {
-            width: 100%;
-            padding: 16px;
-            background: $dark-10;
-            border: 1px solid $dark-15;
-            border-radius: 8px;
-            font-size: $fs-16;
-            color: $white;
-            font-family: inherit;
-            outline: none;
-            transition: border-color 0.2s;
-
-            &::placeholder {
-                color: $grey-50;
-            }
-
-            &:focus {
-                border-color: $yellow-55;
-            }
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 140px;
-        }
-    }
-
-    .bottom {
-        @include flex-center-between;
-        gap: 2rem;
-
-        .checkbox {
+        .left {
             display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: $fs-16;
-            color: $grey-50;
-            cursor: pointer;
+            flex-direction: column;
+            gap: 2rem;
 
-            input {
-                width: 18px;
-                height: 18px;
-                accent-color: $yellow-55;
-                cursor: pointer;
+            .icon {
+                width: 6rem;
+                height: 6rem;
+            }
+
+            h2 {
+                font-family: $kumbh;
+                font-size: $fs-40;
+                font-weight: $fw-medium;
+                color: $white;
+                line-height: 1.2;
             }
         }
 
-        button {
-            padding: 14px 40px;
-            background: $yellow-55;
-            border: none;
-            border-radius: 8px;
-            font-size: $fs-16;
-            font-weight: $fw-medium;
-            color: $dark-10;
-            cursor: pointer;
-            transition: opacity 0.2s;
+        .right {
+            width: 100%;
 
-            &:hover {
-                opacity: 0.9;
+            .form {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+
+                .row {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 1.5rem;
+                }
+
+                .field {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.75rem;
+
+                    label {
+                        font-size: $fs-16;
+                        font-weight: $fw-medium;
+                        color: $white;
+                    }
+
+                    input,
+                    textarea {
+                        width: 100%;
+                        padding: 1.6rem;
+                        background: $dark-10;
+                        border: 1px solid $dark-15;
+                        border-radius: 0.8rem;
+                        font-size: $fs-16;
+                        color: $white;
+                        font-family: inherit;
+                        outline: none;
+                        transition: border-color 0.2s;
+
+                        &::placeholder {
+                            color: $grey-50;
+                        }
+
+                        &:focus {
+                            border-color: $yellow-55;
+                        }
+                    }
+
+                    textarea {
+                        resize: vertical;
+                        min-height: 14rem;
+                    }
+                }
+
+                .bottom {
+                    @include flex-center-between;
+                    gap: 2rem;
+
+                    .checkbox {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.75rem;
+                        font-size: $fs-16;
+                        color: $grey-50;
+                        cursor: pointer;
+
+                        input {
+                            width: 1.8rem;
+                            height: 1.8rem;
+                            accent-color: $yellow-55;
+                            cursor: pointer;
+                        }
+                    }
+
+                    button {
+                        padding: 1.4rem 4rem;
+                        background: $yellow-55;
+                        border: none;
+                        border-radius: 0.8rem;
+                        font-size: $fs-16;
+                        font-weight: $fw-medium;
+                        color: $dark-10;
+                        cursor: pointer;
+                        transition: opacity 0.2s;
+
+                        &:hover {
+                            opacity: 0.9;
+                        }
+
+                        &:disabled {
+                            opacity: 0.5;
+                            cursor: not-allowed;
+                        }
+                    }
+                }
+
+                .error {
+                    font-size: $fs-16;
+                    color: #ff4d4d;
+                }
             }
 
-            &:disabled {
-                opacity: 0.5;
-                cursor: not-allowed;
+            .success {
+                padding: 3rem;
+                background: $dark-10;
+                border: 1px solid $dark-15;
+                border-radius: 1.2rem;
+                font-size: $fs-20;
+                color: $white;
+                text-align: center;
             }
         }
-    }
-
-    .error {
-        font-size: $fs-16;
-        color: #ff4d4d;
-    }
-
-    .success {
-        padding: 3rem;
-        background: $dark-10;
-        border: 1px solid $dark-15;
-        border-radius: 12px;
-        font-size: $fs-20;
-        color: $white;
-        text-align: center;
     }
 }

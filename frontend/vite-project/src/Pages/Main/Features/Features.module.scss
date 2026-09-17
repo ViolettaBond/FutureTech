@@ -3,111 +3,120 @@
 
 .features {
     width: 100%;
-    background: $dark-10;
-    padding: 60px 0;
+    background: $dark-08;
+
+    .header {
+        width: 100%;
+        padding: 6rem 0;
+        background: $dark-10;
+        border-bottom: 1px solid $dark-15;
+
+        .headerInner {
+            width: 100%;
+            max-width: $max-width;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .badge {
+                width: fit-content;
+                padding: 1rem 1.6rem;
+                background: $dark-20;
+                border-radius: 0.4rem;
+                font-size: $fs-16;
+                font-weight: $fw-medium;
+                color: $white;
+            }
+
+            .title {
+                font-family: $kumbh;
+                font-size: $fs-40;
+                font-weight: $fw-medium;
+                color: $white;
+            }
+        }
+    }
 
     .container {
         width: 100%;
         max-width: $max-width;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 6rem 2rem;
         display: flex;
         flex-direction: column;
-        gap: 3rem;
-    }
 
-    .header {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-
-        .badge {
-            width: fit-content;
-            padding: 10px 16px;
-            background: $dark-20;
-            border-radius: 4px;
-            font-size: $fs-16;
-            font-weight: $fw-medium;
-            color: $white;
-        }
-
-        .title {
-            font-family: $kumbh;
-            font-size: $fs-40;
-            font-weight: $fw-medium;
-            color: $white;
-        }
-    }
-
-    .list {
-        display: flex;
-        flex-direction: column;
-        border: 1px solid $dark-15;
-        border-radius: 12px;
-        overflow: hidden;
-    }
-
-    .card {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 3rem;
-        padding: 3rem;
-        background: $dark-10;
-
-        &:not(:last-child) {
-            border-bottom: 1px solid $dark-15;
-        }
-
-        .left {
+        .list {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            border: 1px solid $dark-15;
+            border-radius: 1.2rem;
+            overflow: hidden;
 
-            .icon {
-                width: 60px;
-                height: 60px;
-            }
-
-            h3 {
-                font-family: $kumbh;
-                font-size: $fs-24;
-                font-weight: $fw-medium;
-                color: $white;
-            }
-
-            p {
-                font-size: $fs-16;
-                color: $grey-50;
-                line-height: 1.6;
-            }
-        }
-
-        .right {
-            .grid {
+            .card {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 1.5rem;
-            }
-
-            .cell {
-                padding: 2rem;
+                grid-template-columns: 1fr 2fr;
+                gap: 3rem;
+                padding: 3rem;
                 background: $dark-08;
-                border: 1px solid $dark-15;
-                border-radius: 12px;
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
 
-                h4 {
-                    font-size: $fs-18;
-                    font-weight: $fw-medium;
-                    color: $white;
+                &:not(:last-child) {
+                    border-bottom: 1px solid $dark-15;
                 }
 
-                p {
-                    font-size: $fs-16;
-                    color: $grey-50;
-                    line-height: 1.5;
+                .left {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
+
+                    .icon {
+                        width: 6rem;
+                        height: 6rem;
+                    }
+
+                    h3 {
+                        font-family: $kumbh;
+                        font-size: $fs-24;
+                        font-weight: $fw-medium;
+                        color: $white;
+                    }
+
+                    p {
+                        font-size: $fs-16;
+                        color: $grey-50;
+                        line-height: 1.6;
+                    }
+                }
+
+                .right {
+                    .grid {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 1.5rem;
+
+                        .cell {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1rem;
+                            padding: 2rem;
+                            background: $dark-10;
+                            border: 1px solid $dark-15;
+                            border-radius: 1.2rem;
+
+                            h4 {
+                                font-size: $fs-18;
+                                font-weight: $fw-medium;
+                                color: $white;
+                            }
+
+                            p {
+                                font-size: $fs-16;
+                                color: $grey-50;
+                                line-height: 1.5;
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -40,12 +40,14 @@ const FEATURES = [
 export default function Features() {
     return (
         <section className={styles.features}>
-            <div className={styles.container}>
-                <header className={styles.header}>
+            <div className={styles.header}>
+                <div className={styles.headerInner}>
                     <span className={styles.badge}>Unlock the Power of</span>
                     <h2 className={styles.title}>FutureTech Features</h2>
-                </header>
+                </div>
+            </div>
 
+            <div className={styles.container}>
                 <div className={styles.list}>
                     {FEATURES.map((feature) => (
                         <div className={styles.card} key={feature.id}>

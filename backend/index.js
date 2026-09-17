@@ -41,7 +41,7 @@ app.get('/video', async (req, res) => {
         const result = await pool.query('SELECT * FROM video ORDER BY id');
         res.json(result.rows);
     } catch (err) {
-        console.error('❌ Videos query error:', err.message);
+        console.error('Videos query error:', err.message);
         res.status(500).json({ error: err.message });
     }
 });

@@ -23,6 +23,9 @@ import share from '../frontend/vite-project/src/assets/share.svg';
 import Twitter from '../frontend/vite-project/src/assets/twitter.svg';
 import Google from '../frontend/vite-project/src/assets/google.svg';
 import LinkedIn from '../frontend/vite-project/src/assets/linkedIn.svg';
+import btnVideo from '../frontend/vite-project/src/assets/btnVideo.svg';
+import faqIcon from '../frontend/vite-project/src/assets/faqIcon.svg';
+import contactsIcon from '../frontend/vite-project/src/assets/contactsIcon.svg';
 
 import quantumWaves from '../frontend/vite-project/src/assets/quantumWaves.png';
 import aiRobot from '../frontend/vite-project/src/assets/aiRobot.png';
@@ -32,7 +35,24 @@ import digitalWaves from '../frontend/vite-project/src/assets/digitalWaves.png';
 import iconQuantum from '../frontend/vite-project/src/assets/iconQuantum.svg';
 import iconSpace from '../frontend/vite-project/src/assets/iconSpace.svg';
 
+import avatar from '../frontend/vite-project/src/assets/avatar.svg';
+import avatar1 from '../frontend/vite-project/src/assets/avatar1.svg';
+import avatar2 from '../frontend/vite-project/src/assets/avatar2.svg';
+import avatar3 from '../frontend/vite-project/src/assets/avatar3.svg';
+
+import aiRevolutionVideo from '../frontend/vite-project/src/assets/aiRevolutionVideo.png';
+import aiConversationsVideo from '../frontend/vite-project/src/assets/aiConversationsVideo.png';
+import aiHealthcare from '../frontend/vite-project/src/assets/aiHealthcare.png';
+import aiEthics from '../frontend/vite-project/src/assets/aiEthics.png';
+import machineLearning from '../frontend/vite-project/src/assets/machineLearning.png';
+import futureOfWork from '../frontend/vite-project/src/assets/futureOfWork.png';
+import aiEducation from '../frontend/vite-project/src/assets/aiEducation.png';
+import aiEntertainment from '../frontend/vite-project/src/assets/aiEntertainment.png';
+
+import bg from '../frontend/vite-project/src/assets/bg.png';
+
 export const Photos = {
+    bg,
     DiagonalArrow: diagonalArrow,
     diagonalArrowBlack,
     Logo: logo,
@@ -49,6 +69,13 @@ export const Photos = {
     digitalWaves,
     iconQuantum,
     iconSpace,
+    btnVideo,
+    faqIcon,
+    contactsIcon,
+    avatar,
+    avatar1,
+    avatar2,
+    avatar3,
 
     Covers: {
         global,
@@ -60,6 +87,17 @@ export const Photos = {
     VideoCovers: { mars, blockchain, mental, invest },
 
     Social: { Twitter, Google, LinkedIn },
+
+    Podcast: {
+        aiRevolutionVideo,
+        aiConversationsVideo,
+        aiHealthcare,
+        aiEthics,
+        machineLearning,
+        futureOfWork,
+        aiEducation,
+        aiEntertainment,
+    },
 
     Avatars: {
         john,

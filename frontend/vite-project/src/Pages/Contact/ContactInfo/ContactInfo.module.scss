@@ -8,81 +8,72 @@
         width: 100%;
         max-width: $max-width;
         margin: 0 auto;
-        padding: 0 20px;
-    }
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        border-radius: 12px;
-        overflow: hidden;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            border-radius: 1.2rem;
 
-    .card {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 2.5rem 2rem;
-        background: $dark-08;
+            .card {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                background: $dark-08;
 
-        .cardTitle {
-            font-size: $fs-18;
-            font-weight: $fw-medium;
-            color: $white;
-        }
-
-        .text {
-            font-size: $fs-16;
-            font-weight: $fw-regular;
-            color: $grey-50;
-            line-height: 1.6;
-        }
-
-        .linkBox {
-            @include flex-center-between;
-            gap: 1rem;
-            padding: 14px 18px;
-            background: $dark-10;
-            border: 1px solid $dark-15;
-            border-radius: 8px;
-            font-size: $fs-16;
-            color: $white;
-            text-decoration: none;
-            transition: border-color 0.2s;
-
-            span {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            img {
-                width: 16px;
-                height: 16px;
-                flex-shrink: 0;
-            }
-        }
-
-        .socials {
-            display: flex;
-            gap: 0.75rem;
-
-            a {
-                @include flex-center;
-                width: 44px;
-                height: 44px;
-                background: $dark-10;
-                border: 1px solid $dark-15;
-                border-radius: 8px;
-                transition: border-color 0.2s;
-
-                img {
-                    width: 20px;
-                    height: 20px;
+                .cardTitle {
+                    font-size: $fs-18;
+                    font-weight: $fw-medium;
+                    color: $white;
                 }
 
-                &:hover {
-                    border-color: $yellow-55;
+                .text {
+                    font-size: $fs-16;
+                    font-weight: $fw-regular;
+                    color: $grey-50;
+                    line-height: 1.6;
+                }
+
+                .linkBox {
+                    @include flex-center-between;
+                    gap: 1rem;
+                    padding: 1.4rem 1.8rem;
+                    background: $dark-10;
+                    border: 1px solid $dark-15;
+                    border-radius: 0.8rem;
+                    font-size: $fs-16;
+                    color: $white;
+                    transition: border-color 0.2s;
+
+                    img {
+                        width: 1.6rem;
+                        height: 1.6rem;
+                        flex-shrink: 0;
+                    }
+                }
+
+                .socials {
+                    display: flex;
+                    gap: 0.75rem;
+
+                    a {
+                        @include flex-center;
+                        width: 4.4rem;
+                        height: 4.4rem;
+                        background: $dark-10;
+                        border: 1px solid $dark-15;
+                        border-radius: 0.8rem;
+                        transition: border-color 0.2s;
+
+                        img {
+                            width: 2rem;
+                            height: 2rem;
+                        }
+
+                        &:hover {
+                            border-color: $yellow-55;
+                        }
+                    }
                 }
             }
         }

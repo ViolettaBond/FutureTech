@@ -4,28 +4,28 @@
 .latestEpisodes {
     width: 100%;
     background: $dark-08;
-    padding: 60px 0;
-
-    .container {
-        width: 100%;
-        max-width: $max-width;
-        margin: 0 auto;
-        padding: 0 20px;
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-    }
 
     .heading {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
+        width: 100%;
+        padding: 6rem 0;
+        background: $dark-10;
+        border: 1px solid $dark-15;
+        @include flex-center;
+
+        .headingInner {
+            width: 100%;
+            max-width: $max-width;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
 
         .badge {
             width: fit-content;
-            padding: 8px 16px;
+            padding: 0.8rem 1.6rem;
             background: $dark-20;
-            border-radius: 4px;
+            border-radius: 0.4rem;
             font-size: $fs-16;
             font-weight: $fw-medium;
             color: $white;
@@ -39,108 +39,111 @@
         }
     }
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-
-    .card {
+    .container {
+        width: 100%;
+        max-width: $max-width;
+        margin: 0 auto;
+        padding: 4rem 0;
         display: flex;
         flex-direction: column;
-        gap: 1.25rem;
-        padding: 1.5rem;
-        background: $dark-10;
-        border: 1px solid $dark-15;
-        border-radius: 12px;
-        transition: border-color 0.2s;
+        gap: 3rem;
 
-        &:hover {
-            border-color: $yellow-55;
-        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
 
-        .imageWrap {
-            position: relative;
-            width: 100%;
+            .card {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                border: 1px solid transparent;
+                border-radius: 0.8rem;
+                transition: border-color 0.2s;
 
-            > img {
-                width: 100%;
-                height: 250px;
-                object-fit: cover;
-                border-radius: 8px;
-            }
+                .imageWrap {
+                    position: relative;
+                    width: 100%;
 
-            .playBtn {
-                @include flex-center;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 48px;
-                height: 48px;
-                background: $white;
-                border: none;
-                border-radius: 50%;
-                cursor: pointer;
-                transition: transform 0.2s;
+                    > img {
+                        display: block;
+                        width: 100%;
+                        height: 25rem;
+                        object-fit: cover;
+                        border-radius: 0.8rem;
+                    }
 
-                img {
-                    width: 16px;
-                    height: 16px;
+                    .playBtn {
+                        @include flex-center;
+                        position: absolute;
+                        top: 80%;
+                        left: 10%;
+                        transform: translate(-50%, -50%);
+                        width: 7rem;
+                        height: 7rem;
+                        padding: 0;
+                        border: none;
+                        background: none;
+                        cursor: pointer;
+                        transition: transform 0.2s;
+
+                        img {
+                            width: 7rem;
+                            height: 7rem;
+                        }
+
+                        &:hover {
+                            transform: translate(-50%, -50%) scale(1.08);
+                        }
+                    }
+
+                    .duration {
+                        position: absolute;
+                        right: 1rem;
+                        bottom: 10%;
+                        font-size: $fs-18;
+                        font-weight: $fw-regular;
+                        color: $grey-50;
+                    }
                 }
 
-                &:hover {
-                    transform: translate(-50%, -50%) scale(1.08);
+                .cardTitle {
+                    font-size: $fs-20;
+                    font-weight: $fw-medium;
+                    color: $white;
                 }
-            }
 
-            .duration {
-                position: absolute;
-                right: 12px;
-                bottom: 12px;
-                padding: 4px 10px;
-                background: rgba(0, 0, 0, 0.6);
-                border-radius: 4px;
-                font-size: $fs-16;
-                color: $white;
-            }
-        }
+                .description {
+                    font-size: $fs-18;
+                    font-weight: $fw-regular;
+                    color: $grey-60;
+                }
 
-        .cardTitle {
-            font-size: $fs-18;
-            font-weight: $fw-medium;
-            color: $white;
-        }
+                .listenBtn {
+                    @include flex-center;
+                    width: fit-content;
+                    gap: 0.5rem;
+                    padding: 1rem 1.6rem;
+                    margin-top: auto;
+                    background: transparent;
+                    border: 1px solid $dark-15;
+                    border-radius: 0.6rem;
+                    font-size: $fs-18;
+                    font-weight: $fw-medium;
+                    color: $grey-60;
+                    cursor: pointer;
+                    transition: border-color 0.2s;
 
-        .description {
-            font-size: $fs-16;
-            font-weight: $fw-regular;
-            color: $grey-50;
-            line-height: 1.5;
-        }
+                    img {
+                        width: 1.4rem;
+                        height: 1.4rem;
+                    }
 
-        .listenBtn {
-            width: fit-content;
-            @include flex-center;
-            gap: 0.5rem;
-            padding: 10px 16px;
-            margin-top: auto;
-            background: transparent;
-            border: 1px solid $dark-15;
-            border-radius: 6px;
-            font-size: $fs-16;
-            font-weight: $fw-medium;
-            color: $white;
-            cursor: pointer;
-            transition: border-color 0.2s;
-
-            img {
-                width: 14px;
-                height: 14px;
-            }
-
-            &:hover {
-                border-color: $yellow-55;
+                    &:hover {
+                        border-color: $yellow-55;
+                        color: $yellow-55;
+                    }
+                }
             }
         }
     }

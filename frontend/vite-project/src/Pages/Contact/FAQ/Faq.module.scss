@@ -8,92 +8,90 @@
         width: 100%;
         max-width: $max-width;
         margin: 0 auto;
-        padding: 0 20px;
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: 3rem;
-        align-items: start;
-    }
+        align-items: center;
 
-    .left {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
+        .left {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
 
-        .icon {
-            width: 60px;
-            height: 60px;
-        }
+            .icon {
+                width: 6rem;
+                height: 6rem;
+            }
 
-        h2 {
-            font-family: $kumbh;
-            font-size: $fs-40;
-            font-weight: $fw-medium;
-            color: $white;
-        }
+            h2 {
+                font-family: $kumbh;
+                font-size: $fs-40;
+                font-weight: $fw-medium;
+                color: $white;
+            }
 
-        p {
-            font-size: $fs-16;
-            color: $grey-50;
-            line-height: 1.6;
-        }
+            p {
+                font-size: $fs-16;
+                color: $grey-50;
+                line-height: 1.6;
+            }
 
-        .askBtn {
-            width: fit-content;
-            padding: 14px 28px;
-            background: $dark-10;
-            border: 1px solid $dark-15;
-            border-radius: 8px;
-            font-size: $fs-16;
-            font-weight: $fw-medium;
-            color: $white;
-            cursor: pointer;
-            transition: border-color 0.2s;
+            .askBtn {
+                width: fit-content;
+                padding: 1.4rem 2.8rem;
+                background: $dark-10;
+                border: 1px solid $dark-15;
+                border-radius: 0.8rem;
+                font-size: $fs-16;
+                font-weight: $fw-medium;
+                color: $white;
+                cursor: pointer;
+                transition: border-color 0.2s;
 
-            &:hover {
-                border-color: $yellow-55;
+                &:hover {
+                    border-color: $yellow-55;
+                }
             }
         }
-    }
 
-    .right {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
+        .right {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
 
-    .item {
-        background: $dark-10;
-        border: 1px solid $dark-15;
-        border-radius: 12px;
-        overflow: hidden;
-        transition: border-color 0.2s;
-    }
+            .item {
+                background: $dark-10;
+                border: 1px solid $dark-15;
+                border-radius: 1.2rem;
+                overflow: hidden;
+                transition: border-color 0.2s;
 
-    .question {
-        width: 100%;
-        @include flex-center-between;
-        gap: 2rem;
-        padding: 1.5rem 2rem;
-        background: transparent;
-        border: none;
-        font-size: $fs-18;
-        font-weight: $fw-medium;
-        color: $white;
-        text-align: left;
-        cursor: pointer;
-    }
+                .question {
+                    width: 100%;
+                    @include flex-center-between;
+                    gap: 2rem;
+                    padding: 1.5rem 2rem;
+                    background: transparent;
+                    border: none;
+                    font-size: $fs-18;
+                    font-weight: $fw-medium;
+                    color: $white;
+                    text-align: left;
+                    cursor: pointer;
 
-    .iconPlus {
-        font-size: $fs-24;
-        color: $yellow-55;
-        flex-shrink: 0;
-    }
+                    .iconPlus {
+                        font-size: $fs-24;
+                        color: $yellow-55;
+                        flex-shrink: 0;
+                    }
+                }
 
-    .answer {
-        padding: 0 2rem 1.5rem;
-        font-size: $fs-16;
-        color: $grey-50;
-        line-height: 1.6;
+                .answer {
+                    padding: 0 2rem 1.5rem;
+                    font-size: $fs-16;
+                    color: $grey-50;
+                }
+            }
+        }
     }
 }

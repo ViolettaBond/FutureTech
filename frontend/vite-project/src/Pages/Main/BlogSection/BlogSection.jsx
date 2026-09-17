@@ -1,24 +1,55 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './BlogSection.module.scss';
 import { Photos } from '../../../../../Photos';
 
 const TABS = [
-    { id: 'all', label: 'All' },
-    { id: 'quantum', label: 'Quantum Computing' },
-    { id: 'ethics', label: 'AI Ethics' },
-    { id: 'space', label: 'Space Exploration' },
-    { id: 'bio', label: 'Biotechnology' },
-    { id: 'energy', label: 'Renewable Energy' },
+    { id: 'All', label: 'All' },
+    { id: 'Quantum Computing', label: 'Quantum Computing' },
+    { id: 'AI Ethics', label: 'AI Ethics' },
+    { id: 'Space Exploration', label: 'Space Exploration' },
+    { id: 'Biotechnology', label: 'Biotechnology' },
+    { id: 'Renewable Energy', label: 'Renewable Energy' },
 ];
 
+const AVATARS = {
+    john: Photos.Avatars.john,
+    sarah: Photos.Avatars.sarah,
+    astronomer: Photos.Avatars.astronomer,
+};
+
 export default function BlogSection() {
-    const [activeTab, setActiveTab] = useState('all');
+    const [activeTab, setActiveTab] = useState('All');
+    const [articles, setArticles] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        const fetchArticles = async () => {
+            setLoading(true);
+            try {
+                const url =
+                    activeTab === 'All'
+                        ? 'http://localhost:5000/articles'
+                        : `http://localhost:5000/articles?category=${encodeURIComponent(activeTab)}`;
+
+                const res = await fetch(url);
+                const data = await res.json();
+                setArticles(data);
+            } catch (err) {
+                console.error(err);
+                setArticles([]);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchArticles();
+    }, [activeTab]);
 
     return (
         <section className={styles.blogSection}>
             <div className={styles.container}>
                 <header className={styles.header}>
-                    <div>
+                    <div className={styles.headerLeft}>
                         <span className={styles.badge}>A Knowledge Treasure Trove</span>
                         <h2 className={styles.title}>Explore FutureTech's In-Depth Blog Posts</h2>
                     </div>
@@ -39,9 +70,65 @@ export default function BlogSection() {
                     ))}
                 </div>
 
-                <p className={styles.placeholder}>
-                    Выбранная категория: <strong>{activeTab}</strong>
-                </p>
+                <div className={styles.list}>
+                    {!loading &&
+                        articles.map((article) => {
+                            const avatar = AVATARS[article.author_key];
+
+                            return (
+                                <article className={styles.card} key={article.id}>
+                                    <div className={styles.author}>
+                                        <div className={styles.avatar}>
+                                            {avatar ? (
+                                                <img src={avatar} alt={article.author_name} />
+                                            ) : (
+                                                <span>{article.author_name?.[0] ?? 'A'}</span>
+                                            )}
+                                        </div>
+                                        <div className={styles.authorInfo}>
+                                            <strong>{article.author_name}</strong>
+                                            <span>{article.category}</span>
+                                        </div>
+                                    </div>
+
+                                    <div className={styles.content}>
+                                        <span className={styles.date}>
+                                            {new Date(article.publish_date).toLocaleDateString(
+                                                'en-US',
+                                                {
+                                                    year: 'numeric',
+                                                    month: 'long',
+                                                    day: 'numeric',
+                                                },
+                                            )}
+                                        </span>
+                                        <h3 className={styles.cardTitle}>{article.title}</h3>
+                                        <p className={styles.cardText}>{article.description}</p>
+
+                                        <div className={styles.stats}>
+                                            <span className={styles.stat}>
+                                                <img src={Photos.like} alt="" />
+                                                24.5k
+                                            </span>
+                                            <span className={styles.stat}>
+                                                <img src={Photos.comment} alt="" />
+                                                50
+                                            </span>
+                                            <span className={styles.stat}>
+                                                <img src={Photos.share} alt="" />
+                                                20
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <a className={styles.viewBtn} href={`/blog/${article.id}`}>
+                                        View Blog
+                                        <img src={Photos.DiagonalArrow} alt="" />
+                                    </a>
+                                </article>
+                            );
+                        })}
+                </div>
             </div>
         </section>
     );

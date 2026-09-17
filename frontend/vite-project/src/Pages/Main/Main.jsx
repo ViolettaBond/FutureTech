@@ -4,7 +4,6 @@ import Features from './Features/Features';
 import BlogSection from './BlogSection/BlogSection';
 import Resources from './Resources/Resources';
 import Reviews from './Reviews/Reviews';
-import About from './About/About';
 
 export default function Main() {
     return (
@@ -12,9 +11,8 @@ export default function Main() {
             <Hero />
             <Features />
             <BlogSection />
-            <Resources />
-            <Reviews />
-            <About />
+            {/* <Resources />
+            <Reviews /> */}
         </main>
     );
 }

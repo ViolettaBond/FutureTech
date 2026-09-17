@@ -4,184 +4,206 @@
 .hero {
     width: 100%;
     background: $dark-08;
-    padding: 60px 0;
+    padding: 6rem 0;
 
     .container {
         width: 100%;
         max-width: $max-width;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 2rem;
         display: flex;
         flex-direction: column;
         gap: 3rem;
-    }
 
-    .body {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        max-width: 900px;
+        .top {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: start;
 
-        .subtitle {
-            font-family: $kumbh;
-            font-size: $fs-24;
-            font-weight: $fw-medium;
-            color: $grey-50;
-        }
+            .left {
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
 
-        .title {
-            font-family: $kumbh;
-            font-size: $fs-58;
-            font-weight: $fw-medium;
-            color: $white;
-            line-height: 1.1;
-        }
+                .body {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
 
-        .description {
-            font-size: $fs-18;
-            color: $grey-50;
-            line-height: 1.6;
-        }
-    }
+                    .subtitle {
+                        font-family: $kumbh;
+                        font-size: $fs-24;
+                        font-weight: $fw-medium;
+                        color: $grey-50;
+                    }
 
-    .metrics {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        border: 1px solid $dark-15;
-        border-radius: 12px;
-        overflow: hidden;
+                    .title {
+                        font-family: $kumbh;
+                        font-size: $fs-58;
+                        font-weight: $fw-medium;
+                        color: $white;
+                        line-height: 1.1;
+                    }
 
-        .metric {
-            display: flex;
-            flex-direction: column-reverse;
-            gap: 0.5rem;
-            padding: 2rem;
+                    .description {
+                        font-size: $fs-18;
+                        color: $grey-50;
+                        line-height: 1.6;
+                    }
+                }
 
-            &:not(:last-child) {
-                border-right: 1px solid $dark-15;
+                .metrics {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    border: 1px solid $dark-15;
+                    border-radius: 1.2rem;
+                    overflow: hidden;
+
+                    .metric {
+                        display: flex;
+                        flex-direction: column-reverse;
+                        gap: 0.5rem;
+                        padding: 2rem;
+
+                        &:not(:last-child) {
+                            border-right: 1px solid $dark-15;
+                        }
+
+                        .metricLabel {
+                            font-size: $fs-16;
+                            color: $grey-50;
+                        }
+
+                        .metricValue {
+                            font-family: $kumbh;
+                            font-size: $fs-40;
+                            font-weight: $fw-medium;
+                            color: $white;
+
+                            .metricSign {
+                                color: $yellow-55;
+                            }
+                        }
+                    }
+                }
             }
 
-            .metricLabel {
-                font-size: $fs-16;
-                color: $grey-50;
-            }
+            .right {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                min-height: 60rem;
+                padding: 2rem;
+                background-image: url('../../../assets/bg.png');
+                background-size: cover;
+                background-position: top right;
+                background-repeat: no-repeat;
+                background-color: $dark-08;
 
-            .metricValue {
-                font-family: $kumbh;
-                font-size: $fs-40;
-                font-weight: $fw-medium;
-                color: $white;
+                .preview {
+                    position: relative;
+                    z-index: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.5rem;
 
-                .metricSign {
-                    color: $yellow-55;
+                    .team {
+                        display: flex;
+
+                        img {
+                            width: 6rem;
+                            height: 6rem;
+
+                            &:not(:first-child) {
+                                margin-left: -1rem;
+                            }
+                        }
+                    }
+
+                    .previewBody {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5rem;
+
+                        .previewTitle {
+                            font-size: $fs-20;
+                            font-weight: $fw-medium;
+                            color: $white;
+                        }
+
+                        .previewSubtitle {
+                            font-size: $fs-16;
+                            color: $grey-50;
+                        }
+                    }
+
+                    .previewBtn {
+                        @include flex-center;
+                        width: fit-content;
+                        gap: 0.75rem;
+                        padding: 1.4rem 2.4rem;
+                        background: $dark-20;
+                        border: 1px solid $dark-15;
+                        border-radius: 0.8rem;
+                        font-size: $fs-16;
+                        font-weight: $fw-medium;
+                        color: $white;
+                        text-decoration: none;
+                        transition: border-color 0.2s;
+
+                        img {
+                            width: 1.6rem;
+                            height: 1.6rem;
+                        }
+
+                        &:hover {
+                            border-color: $yellow-55;
+                        }
+                    }
                 }
             }
         }
-    }
 
-    .preview {
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        align-items: center;
-        gap: 2rem;
-        padding: 2rem;
-        background: $dark-10;
-        border: 1px solid $dark-15;
-        border-radius: 12px;
-
-        .team {
-            display: flex;
-
-            img {
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                border: 2px solid $dark-40;
-
-                &:not(:first-child) {
-                    margin-left: -15px;
-                }
-            }
-        }
-
-        .previewBody {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-
-            .previewTitle {
-                font-size: $fs-20;
-                font-weight: $fw-medium;
-                color: $white;
-            }
-
-            .previewSubtitle {
-                font-size: $fs-16;
-                color: $grey-50;
-            }
-        }
-
-        .previewBtn {
-            @include flex-center;
-            gap: 0.75rem;
-            padding: 14px 24px;
-            background: $dark-20;
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             border: 1px solid $dark-15;
-            border-radius: 8px;
-            font-size: $fs-16;
-            font-weight: $fw-medium;
-            color: $white;
-            text-decoration: none;
-            transition: border-color 0.2s;
+            border-radius: 1.2rem;
+            overflow: hidden;
 
-            img {
-                width: 16px;
-                height: 16px;
-            }
+            .advantageCard {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 2rem;
 
-            &:hover {
-                border-color: $yellow-55;
-            }
-        }
-    }
+                &:not(:last-child) {
+                    border-right: 1px solid $dark-15;
+                }
 
-    .advantages {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        border: 1px solid $dark-15;
-        border-radius: 12px;
-        overflow: hidden;
+                img {
+                    width: 5rem;
+                    height: 5rem;
+                }
 
-        .advantageCard {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            padding: 2rem;
+                h3 {
+                    font-size: $fs-20;
+                    font-weight: $fw-medium;
+                    color: $white;
+                }
 
-            &:not(:last-child) {
-                border-right: 1px solid $dark-15;
-            }
+                .advantageSubtitle {
+                    font-size: $fs-16;
+                    color: $grey-50;
+                }
 
-            img {
-                width: 50px;
-                height: 50px;
-            }
-
-            h3 {
-                font-size: $fs-20;
-                font-weight: $fw-medium;
-                color: $white;
-            }
-
-            .advantageSubtitle {
-                font-size: $fs-16;
-                color: $grey-50;
-            }
-
-            .advantageDetails {
-                font-size: $fs-16;
-                color: $grey-60;
-                line-height: 1.5;
+                .advantageDetails {
+                    font-size: $fs-16;
+                    color: $grey-60;
+                    line-height: 1.5;
+                }
             }
         }
     }

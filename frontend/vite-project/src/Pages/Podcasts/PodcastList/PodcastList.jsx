@@ -8,7 +8,7 @@ const PODCASTS = [
         title: 'AI Revolution',
         rating: 5,
         host: 'Dr. Sarah Mitchell',
-        image: Photos.quantumWaves,
+        image: Photos.Podcast.aiRevolutionVideo,
         subtitle: 'Delves into the transformative impact of AI',
         description:
             'Join Dr. Sarah Mitchell as she delves into the transformative impact of AI on industries, featuring expert interviews and real-world case studies. Explore the possibilities of AI in healthcare, finance, and more.',
@@ -22,7 +22,7 @@ const PODCASTS = [
         title: 'AI Conversations',
         rating: 5,
         host: 'Mark Anderson',
-        image: Photos.aiRobot,
+        image: Photos.Podcast.aiConversationsVideo,
         subtitle: 'Engage in thought-provoking conversations with leading experts.',
         description:
             "Mark discusses the future of AI, the impact on society, and how it's shaping industries worldwide. Engage in thought-provoking conversations with leading experts.",
