@@ -15,12 +15,11 @@
             width: 100%;
             max-width: $max-width;
             margin: 0 auto;
-            padding: 0 2rem;
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
 
-            .badge {
+            .eyebrow {
                 width: fit-content;
                 padding: 1rem 1.6rem;
                 background: $dark-20;
@@ -41,9 +40,7 @@
 
     .container {
         width: 100%;
-        max-width: $max-width;
         margin: 0 auto;
-        padding: 6rem 2rem;
         display: flex;
         flex-direction: column;
 
@@ -56,9 +53,8 @@
 
             .card {
                 display: grid;
-                grid-template-columns: 1fr 2fr;
-                gap: 3rem;
-                padding: 3rem;
+                grid-template-columns: 1fr 1fr;
+                gap: 0;
                 background: $dark-08;
 
                 &:not(:last-child) {
@@ -68,7 +64,10 @@
                 .left {
                     display: flex;
                     flex-direction: column;
+                    justify-content: center;
                     gap: 1.5rem;
+                    padding-left: clamp(5rem, 12vw, 22rem);
+                    border-right: 1px solid $dark-15;
 
                     .icon {
                         width: 6rem;
@@ -77,19 +76,22 @@
 
                     h3 {
                         font-family: $kumbh;
-                        font-size: $fs-24;
-                        font-weight: $fw-medium;
+                        font-size: $fs-40;
+                        font-weight: $fw-semibold;
                         color: $white;
                     }
 
                     p {
-                        font-size: $fs-16;
+                        font-size: $fs-18;
+                        font-weight: $fw-regular;
                         color: $grey-50;
                         line-height: 1.6;
                     }
                 }
 
                 .right {
+                    padding: 4rem;
+
                     .grid {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
@@ -105,14 +107,15 @@
                             border-radius: 1.2rem;
 
                             h4 {
-                                font-size: $fs-18;
+                                font-size: $fs-24;
                                 font-weight: $fw-medium;
                                 color: $white;
                             }
 
                             p {
-                                font-size: $fs-16;
-                                color: $grey-50;
+                                font-size: $fs-18;
+                                font-weight: $fw-regular;
+                                color: $grey-60;
                                 line-height: 1.5;
                             }
                         }

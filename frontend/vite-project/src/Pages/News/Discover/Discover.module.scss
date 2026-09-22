@@ -3,7 +3,8 @@
 
 .discover {
     width: 100%;
-    min-height: 220vh;
+    min-height: 100vh;
+    padding: 60px 0;
     @include flex-center;
     flex-direction: column;
 

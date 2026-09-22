@@ -83,11 +83,14 @@
             .contactBtn {
                 width: 137px;
                 height: 55px;
-                color: $dark-08;
                 background: $yellow-55;
                 border: none;
                 border-radius: 1rem;
                 cursor: pointer;
+                
+                a{
+                    color: $dark-08;
+                }
             }
         }
     }

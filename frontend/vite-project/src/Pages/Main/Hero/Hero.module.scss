@@ -3,207 +3,215 @@
 
 .hero {
     width: 100%;
-    background: $dark-08;
-    padding: 6rem 0;
+    @include flex-column;
 
-    .container {
+    .heroMain {
         width: 100%;
-        max-width: $max-width;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        border: 1px solid $dark-15;
 
-        .top {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 3rem;
-            align-items: start;
+        .heroContent {
+            padding-top: 6rem;
+            border-right: 1px solid $dark-15;
 
-            .left {
-                display: flex;
-                flex-direction: column;
-                gap: 3rem;
+            .contentText {
+                @include flex-column;
+                gap: 2rem;
+                padding-left: clamp(4rem, 12vw, 21.5rem);
 
-                .body {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1.5rem;
-
-                    .subtitle {
-                        font-family: $kumbh;
-                        font-size: $fs-24;
-                        font-weight: $fw-medium;
-                        color: $grey-50;
-                    }
-
-                    .title {
-                        font-family: $kumbh;
-                        font-size: $fs-58;
-                        font-weight: $fw-medium;
-                        color: $white;
-                        line-height: 1.1;
-                    }
-
-                    .description {
-                        font-size: $fs-18;
-                        color: $grey-50;
-                        line-height: 1.6;
-                    }
+                .eyebrow {
+                    font-family: $kumbh;
+                    font-weight: $fw-medium;
+                    font-size: $fs-32;
+                    color: $dark-40;
                 }
 
-                .metrics {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    border: 1px solid $dark-15;
-                    border-radius: 1.2rem;
-                    overflow: hidden;
+                .title {
+                    max-width: 80rem;
+                    font-family: $kumbh;
+                    font-weight: $fw-medium;
+                    font-size: $fs-64;
+                    line-height: 1.2;
+                    color: $white;
+                }
 
-                    .metric {
-                        display: flex;
-                        flex-direction: column-reverse;
-                        gap: 0.5rem;
-                        padding: 2rem;
-
-                        &:not(:last-child) {
-                            border-right: 1px solid $dark-15;
-                        }
-
-                        .metricLabel {
-                            font-size: $fs-16;
-                            color: $grey-50;
-                        }
-
-                        .metricValue {
-                            font-family: $kumbh;
-                            font-size: $fs-40;
-                            font-weight: $fw-medium;
-                            color: $white;
-
-                            .metricSign {
-                                color: $yellow-55;
-                            }
-                        }
-                    }
+                .description {
+                    max-width: 65rem;
+                    font-weight: $fw-regular;
+                    font-size: $fs-18;
+                    color: $grey-50;
                 }
             }
 
-            .right {
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-                min-height: 60rem;
-                padding: 2rem;
-                background-image: url('../../../assets/bg.png');
-                background-size: cover;
-                background-position: top right;
-                background-repeat: no-repeat;
-                background-color: $dark-08;
+            .contentStatistic {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                margin-top: 6rem;
+                border: 1px solid $dark-15;
 
-                .preview {
-                    position: relative;
-                    z-index: 1;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1.5rem;
+                .stat {
+                    @include flex-column;
+                    gap: 0.8rem;
+                    padding: 2.8rem 4rem;
 
-                    .team {
-                        display: flex;
-
-                        img {
-                            width: 6rem;
-                            height: 6rem;
-
-                            &:not(:first-child) {
-                                margin-left: -1rem;
-                            }
-                        }
+                    &:first-child {
+                        padding-left: clamp(4rem, 12vw, 21.5rem);
                     }
 
-                    .previewBody {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 0.5rem;
+                    &:not(:last-child) {
+                        border-right: 1px solid $dark-15;
+                    }
 
-                        .previewTitle {
-                            font-size: $fs-20;
-                            font-weight: $fw-medium;
+                    strong {
+                        font-size: $fs-40;
+                        font-weight: $fw-semibold;
+                        color: $yellow-55;
+
+                        span {
                             color: $white;
                         }
-
-                        .previewSubtitle {
-                            font-size: $fs-16;
-                            color: $grey-50;
-                        }
                     }
 
-                    .previewBtn {
-                        @include flex-center;
-                        width: fit-content;
-                        gap: 0.75rem;
-                        padding: 1.4rem 2.4rem;
-                        background: $dark-20;
-                        border: 1px solid $dark-15;
-                        border-radius: 0.8rem;
-                        font-size: $fs-16;
-                        font-weight: $fw-medium;
-                        color: $white;
-                        text-decoration: none;
-                        transition: border-color 0.2s;
-
-                        img {
-                            width: 1.6rem;
-                            height: 1.6rem;
-                        }
-
-                        &:hover {
-                            border-color: $yellow-55;
-                        }
+                    > span {
+                        font-size: $fs-18;
+                        font-weight: $fw-regular;
+                        color: $grey-60;
                     }
                 }
             }
         }
 
-        .advantages {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            border: 1px solid $dark-15;
-            border-radius: 1.2rem;
-            overflow: hidden;
+        .heroResources {
+            background-image: url(/src/assets/bg.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 4rem;
+            gap: 2rem;
 
-            .advantageCard {
+            .avatars {
+                width: fit-content;
                 display: flex;
-                flex-direction: column;
-                gap: 1rem;
-                padding: 2rem;
-
-                &:not(:last-child) {
-                    border-right: 1px solid $dark-15;
-                }
+                align-items: center;
+                padding: 0.5rem;
+                background: $dark-10;
+                border: 1px solid $dark-15;
+                border-radius: 100px;
 
                 img {
-                    width: 5rem;
-                    height: 5rem;
-                }
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 100%;
 
-                h3 {
-                    font-size: $fs-20;
+                    &:not(:first-child) {
+                        margin-left: -10px;
+                    }
+                }
+            }
+
+            .resoursesText {
+                @include flex-column;
+                gap: 1rem;
+
+                .resourcesTitle {
+                    font-size: $fs-24;
                     font-weight: $fw-medium;
                     color: $white;
                 }
 
-                .advantageSubtitle {
-                    font-size: $fs-16;
+                .resourcesDescription {
+                    font-size: $fs-18;
+                    font-weight: $fw-regular;
                     color: $grey-50;
                 }
+            }
 
-                .advantageDetails {
-                    font-size: $fs-16;
-                    color: $grey-60;
-                    line-height: 1.5;
+            .resourcesButton {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                width: fit-content;
+                min-width: 120px;
+                padding: 1.5rem;
+                border-radius: 1.2rem;
+                border: 1px solid $dark-15;
+                background: $dark-08;
+
+                font-size: $fs-18;
+                font-weight: $fw-regular;
+                color: $grey-60;
+
+                transition: border-color 0.3s ease;
+
+                &:hover {
+                    border-color: $yellow-55;
                 }
+            }
+        }
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        .feature {
+            padding: 6rem;
+            @include flex-column;
+            gap: 2rem;
+
+            > img {
+                width: 50px;
+                height: 50px;
+            }
+
+            &:not(:last-child) {
+                border-right: 1px solid $dark-15;
+            }
+
+            .featureContent {
+                @include flex-center-between;
+
+                .featureText {
+                    @include flex-column;
+                    gap: 0.5rem;
+
+                    h3 {
+                        font-size: $fs-20;
+                        font-weight: $fw-medium;
+                        color: $white;
+                    }
+
+                    p {
+                        font-size: $fs-18;
+                        font-weight: $fw-regular;
+                        color: $grey-50;
+                    }
+                }
+
+                .featureButton {
+                    width: 52px;
+                    height: 52px;
+                    border-radius: 100%;
+                    background: $yellow-55;
+                    padding: 0.5rem;
+                    @include flex-center;
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+
+            > p {
+                font-family: $kumbh;
+                font-size: $fs-20;
+                font-weight: $fw-regular;
+                color: $grey-60;
             }
         }
     }

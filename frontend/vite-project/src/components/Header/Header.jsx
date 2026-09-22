@@ -51,7 +51,7 @@ export default function Header() {
                         ))}
                     </nav>
 
-                    <button className={styles.contactBtn}>Contact Us</button>
+                    <button className={styles.contactBtn}><a href="/contact">Contact Us</a></button>
                 </div>
             </div>
         </header>

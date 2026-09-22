@@ -11,8 +11,8 @@ export default function Main() {
             <Hero />
             <Features />
             <BlogSection />
-            {/* <Resources />
-            <Reviews /> */}
+            <Resources />
+            <Reviews />
         </main>
     );
 }

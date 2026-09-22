@@ -165,7 +165,7 @@ export default function InDepth() {
 
     return (
         <section className={styles.inDepth}>
-            <div className={styles.container}>
+            <div className={styles.tabsBlock}>
                 <div className={styles.tabsInner}>
                     <div className={styles.headingTabs}>
                         <span>Dive into the Details</span>
@@ -184,41 +184,45 @@ export default function InDepth() {
                         ))}
                     </div>
                 </div>
+            </div>
 
+            <div className={styles.container}>
                 <div className={styles.list}>
                     {data.big.map((item) => (
                         <div className={styles.bigCard} key={item.id}>
                             <div className={styles.left}>
                                 <img className={styles.icon} src={item.icon} alt="" />
-                                <h3>{item.title}</h3>
+                                <h2>{item.title}</h2>
                                 <p>{item.description}</p>
                             </div>
 
                             <div className={styles.right}>
                                 <img src={item.image} alt={item.title} />
 
-                                <div className={styles.cardBottom}>
-                                    <div>
-                                        <h4>{item.title}</h4>
-                                        <p>{item.description}</p>
+                                <div className={styles.infoRight}>
+                                    <div className={styles.cardBottom}>
+                                        <div className={styles.cardInfo}>
+                                            <h2>{item.title}</h2>
+                                            <p>{item.description}</p>
+                                        </div>
+                                        <button className={styles.downloadBtn}>
+                                            Download PDF Now ↗
+                                        </button>
                                     </div>
-                                    <button className={styles.downloadBtn}>
-                                        Download PDF Now ↗
-                                    </button>
-                                </div>
 
-                                <div className={styles.meta}>
-                                    <div>
-                                        <span>Publication Date</span>
-                                        <strong>{item.date}</strong>
-                                    </div>
-                                    <div>
-                                        <span>Category</span>
-                                        <strong>{item.category}</strong>
-                                    </div>
-                                    <div>
-                                        <span>Author</span>
-                                        <strong>{item.author}</strong>
+                                    <div className={styles.meta}>
+                                        <div className={styles.metaItem}>
+                                            <span>Publication Date</span>
+                                            <strong>{item.date}</strong>
+                                        </div>
+                                        <div className={styles.metaItem}>
+                                            <span>Category</span>
+                                            <strong>{item.category}</strong>
+                                        </div>
+                                        <div className={styles.metaItem}>
+                                            <span>Author</span>
+                                            <strong>{item.author}</strong>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

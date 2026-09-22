@@ -13,10 +13,35 @@ export default function Similiar() {
             .then((data) => {
                 const list = Array.isArray(data) ? data : data.articles || [];
 
-                const featuredArticle = list.find((a) => a.is_featured);
-                setFeatured(featuredArticle || null);
+                const isFeatured = (a) =>
+                    a.is_featured === true ||
+                    a.is_featured === 'true' ||
+                    a.is_featured === 1 ||
+                    a.is_featured === '1';
 
-                const bottomCards = list.filter((a) => a.image_key && !a.is_featured);
+                const featuredArticle = list.find(isFeatured) || null;
+                setFeatured(featuredArticle);
+
+                const usedKeys = new Set();
+                const usedTitles = new Set();
+
+                // Защищаемся от featured, если он вдруг попадёт в bottom
+                if (featuredArticle) {
+                    if (featuredArticle.image_key) usedKeys.add(featuredArticle.image_key);
+                    if (featuredArticle.title) usedTitles.add(featuredArticle.title);
+                }
+
+                const bottomCards = list
+                    .filter((a) => a.image_key && !isFeatured(a))
+                    .filter((a) => {
+                        if (usedKeys.has(a.image_key)) return false;
+                        if (usedTitles.has(a.title)) return false;
+                        usedKeys.add(a.image_key);
+                        usedTitles.add(a.title);
+                        return true;
+                    })
+                    .slice(0, 3);
+
                 setCards(bottomCards);
             })
             .catch((err) => {

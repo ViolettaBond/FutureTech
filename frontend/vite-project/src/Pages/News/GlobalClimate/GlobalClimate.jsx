@@ -13,10 +13,48 @@ export default function GlobalClimate() {
             .then((data) => {
                 const list = Array.isArray(data) ? data : data.articles || [];
 
-                const featuredArticle = list.find((a) => a.is_featured);
-                setFeatured(featuredArticle || null);
+                const isFeatured = (a) =>
+                    a.is_featured === true ||
+                    a.is_featured === 'true' ||
+                    a.is_featured === 1 ||
+                    a.is_featured === '1';
 
-                const bottomCards = list.filter((a) => a.image_key && !a.is_featured);
+                const featuredArticle = list.find(isFeatured) || null;
+                setFeatured(featuredArticle);
+
+                const wantedCategories = ['Politics', 'Technology', 'Health'];
+
+                const usedIds = new Set();
+                const usedKeys = new Set();
+                const usedTitles = new Set();
+
+                if (featuredArticle) {
+                    usedIds.add(featuredArticle.id);
+                    if (featuredArticle.image_key) usedKeys.add(featuredArticle.image_key);
+                    if (featuredArticle.title) usedTitles.add(featuredArticle.title);
+                }
+
+                const bottomCards = [];
+
+                for (const category of wantedCategories) {
+                    const article = list.find(
+                        (a) =>
+                            a.image_key &&
+                            !isFeatured(a) &&
+                            a.category === category &&
+                            !usedIds.has(a.id) &&
+                            !usedKeys.has(a.image_key) &&
+                            !usedTitles.has(a.title),
+                    );
+
+                    if (article) {
+                        bottomCards.push(article);
+                        usedIds.add(article.id);
+                        usedKeys.add(article.image_key);
+                        usedTitles.add(article.title);
+                    }
+                }
+
                 setCards(bottomCards);
             })
             .catch((err) => {

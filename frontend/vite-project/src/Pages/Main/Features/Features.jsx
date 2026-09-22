@@ -4,7 +4,7 @@ import { Photos } from '../../../../../Photos';
 const FEATURES = [
     {
         id: 'blog',
-        icon: Photos.iconQuantum,
+        icon: Photos.futureIcon,
         title: 'FutureTech Blog',
         description: 'Stay informed with our blog section dedicated to future technology.',
         cells: [
@@ -25,7 +25,7 @@ const FEATURES = [
     },
     {
         id: 'research',
-        icon: Photos.iconSpace,
+        icon: Photos.researchIcon,
         title: 'Research Insights Blogs',
         description: 'Dive deep into future technology concepts with our research section.',
         cells: [
@@ -42,7 +42,7 @@ export default function Features() {
         <section className={styles.features}>
             <div className={styles.header}>
                 <div className={styles.headerInner}>
-                    <span className={styles.badge}>Unlock the Power of</span>
+                    <span className={styles.eyebrow}>Unlock the Power of</span>
                     <h2 className={styles.title}>FutureTech Features</h2>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import styles from './Discover.module.scss';
 import { Photos } from '../../../../../Photos';
 
 const CATEGORIES = ['All', 'Technology', 'Politics', 'Health', 'Environment', 'Sports'];
+const ALLOWED_IN_ALL = ['Technology', 'Politics', 'Health', 'Environment', 'Sports'];
 
 export default function Discover() {
     const [articles, setArticles] = useState([]);
@@ -13,7 +14,14 @@ export default function Discover() {
         fetch(`http://localhost:5000/articles?category=${category}`)
             .then((res) => res.json())
             .then((data) => {
-                setArticles(Array.isArray(data) ? data : data.articles || []);
+                const list = Array.isArray(data) ? data : data.articles || [];
+
+                const filtered =
+                    category === 'All'
+                        ? list.filter((a) => ALLOWED_IN_ALL.includes(a.category))
+                        : list;
+
+                setArticles(filtered);
             })
             .catch((err) => {
                 console.error(err);

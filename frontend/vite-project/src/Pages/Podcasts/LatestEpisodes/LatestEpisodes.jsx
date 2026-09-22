@@ -78,7 +78,6 @@ export default function LatestEpisodes() {
 
                             <h3 className={styles.cardTitle}>{episode.title}</h3>
                             <p className={styles.description}>{episode.description}</p>
-
                             <button className={styles.listenBtn}>
                                 Listen Podcast
                                 <img src={Photos.DiagonalArrow} alt="" />

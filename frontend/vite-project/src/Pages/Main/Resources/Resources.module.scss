@@ -3,122 +3,354 @@
 
 .resources {
     width: 100%;
-    background: $dark-10;
-    padding: 60px 0;
+
+    .header {
+        width: 100%;
+        background: $dark-10;
+        border: 1px solid $dark-15;
+        padding: 6rem 0px;
+
+        .innerHeader {
+            width: 100%;
+            max-width: $max-width;
+            margin: 0 auto;
+            @include flex-center-between;
+
+            .textHeader {
+                @include flex-column;
+                gap: 1rem;
+
+                .badge {
+                    width: fit-content;
+                    padding: 0.7rem;
+                    background: $dark-20;
+                    border-radius: 0.4rem;
+                }
+
+                .title {
+                    max-width: 950px;
+                    font-family: $kumbh;
+                    font-weight: $fw-medium;
+                    font-size: $fs-58;
+                }
+            }
+
+            .viewAllBtn {
+                @include flex-center;
+                gap: 1rem;
+                min-width: 100px;
+                padding: 1rem;
+                background: $dark-08;
+                border-radius: 1.2rem;
+                border: 1px solid $dark-15;
+                color: $grey-60;
+                font-weight: $fw-regular;
+                font-size: $fs-18;
+            }
+        }
+    }
 
     .container {
         width: 100%;
         max-width: $max-width;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0;
+
         display: flex;
         flex-direction: column;
-        gap: 3rem;
-    }
 
-    .header {
-        @include flex-center-between;
-        gap: 2rem;
+        .futureRow {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
 
-        .badge {
-            display: block;
-            width: fit-content;
-            padding: 10px 16px;
-            margin-bottom: 1rem;
-            background: $dark-20;
-            border-radius: 4px;
-            font-size: $fs-16;
-            font-weight: $fw-medium;
-            color: $white;
+            width: 100%;
         }
 
-        .title {
-            font-family: $kumbh;
-            font-size: $fs-40;
-            font-weight: $fw-medium;
-            color: $white;
-            max-width: 900px;
-        }
+        .grid {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
 
-        .viewAllBtn {
-            @include flex-center;
-            gap: 0.75rem;
-            padding: 14px 24px;
-            background: $dark-20;
-            border: 1px solid $dark-15;
-            border-radius: 8px;
-            font-size: $fs-16;
-            font-weight: $fw-medium;
-            color: $white;
-            text-decoration: none;
-            flex-shrink: 0;
+            min-width: 0;
 
-            img {
-                width: 16px;
-                height: 16px;
+            border-right: 1px solid $dark-15;
+
+            .card {
+                display: flex;
+                flex-direction: column;
+
+                gap: 1.5rem;
+
+                padding: 4rem 0px;
+
+                min-width: 0;
+
+                &:first-child {
+                    border-bottom: 1px solid $dark-15;
+                }
+
+                > img {
+                    width: 3.75rem;
+                    height: 3.75rem;
+                }
+
+                h3 {
+                    font-family: $kumbh;
+                    font-size: $fs-24;
+                    font-weight: $fw-medium;
+
+                    color: $white;
+                }
+
+                p {
+                    max-width: 420px;
+
+                    margin: 0;
+
+                    font-size: $fs-16;
+                    line-height: 1.5;
+
+                    color: $grey-50;
+
+                    flex-grow: 1;
+                }
+
+                .downloadBtn {
+                    @include flex-center;
+
+                    width: fit-content;
+
+                    gap: 0.75rem;
+                    padding: 0.875rem 1.25rem;
+
+                    background: $dark-10;
+                    border: 1px solid $dark-15;
+                    border-radius: 0.5rem;
+
+                    font-size: $fs-16;
+                    font-weight: $fw-medium;
+                    color: $grey-50;
+
+                    text-decoration: none;
+
+                    img {
+                        width: 1rem;
+                        height: 1rem;
+                    }
+
+                    &:hover {
+                        border-color: $yellow-55;
+                    }
+                }
             }
-
-            &:hover {
-                border-color: $yellow-55;
-            }
-        }
-    }
-
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-    }
-
-    .card {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        padding: 3rem;
-        background: $dark-08;
-        border: 1px solid $dark-15;
-        border-radius: 12px;
-
-        > img {
-            width: 60px;
-            height: 60px;
         }
 
-        h3 {
-            font-family: $kumbh;
-            font-size: $fs-24;
-            font-weight: $fw-medium;
-            color: $white;
-        }
+        .list {
+            display: flex;
+            flex-direction: column;
 
-        p {
-            font-size: $fs-16;
-            color: $grey-50;
-            line-height: 1.6;
-            flex-grow: 1;
-        }
+            min-width: 0;
 
-        .downloadBtn {
-            @include flex-center;
-            gap: 0.75rem;
-            width: fit-content;
-            padding: 14px 24px;
-            background: $dark-10;
-            border: 1px solid $dark-15;
-            border-radius: 8px;
-            font-size: $fs-16;
-            font-weight: $fw-medium;
-            color: $white;
-            text-decoration: none;
-            transition: border-color 0.2s;
+            .card {
+                width: 100%;
+                min-width: 0;
 
-            img {
-                width: 16px;
-                height: 16px;
-            }
+                padding: 2.5rem;
 
-            &:hover {
-                border-color: $yellow-55;
+                &:first-child {
+                    border-bottom: 1px solid $dark-15;
+                }
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+
+                    width: 100%;
+                    min-width: 0;
+
+                    gap: 1.5rem;
+                }
+
+                // =============================================
+                // TITLE + DESCRIPTION
+                // =============================================
+
+                .headingList {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+
+                    width: 100%;
+
+                    gap: 2rem;
+
+                    .subtitle {
+                        flex-shrink: 0;
+
+                        margin: 0;
+
+                        font-size: $fs-26;
+                        font-weight: $fw-medium;
+                        color: $white;
+                    }
+
+                    .description {
+                        width: 65%;
+
+                        margin: 0;
+
+                        font-size: $fs-18;
+                        font-weight: $fw-regular;
+                        line-height: 1.4;
+
+                        color: $grey-50;
+                    }
+                }
+
+                // =============================================
+                // IMAGE
+                // =============================================
+
+                .imageWrap {
+                    width: 100%;
+
+                    aspect-ratio: 16 / 6;
+
+                    overflow: hidden;
+                    border-radius: 0.5rem;
+
+                    > img {
+                        display: block;
+
+                        width: 100%;
+                        height: 100%;
+
+                        object-fit: cover;
+
+                        cursor: pointer;
+                    }
+                }
+
+                // =============================================
+                // META
+                // =============================================
+
+                .meta {
+                    display: grid;
+
+                    grid-template-columns: 1fr 2fr;
+
+                    gap: 1rem;
+                }
+
+                .metaItem,
+                .metaItemFlex,
+                .metaItemAverage {
+                    padding: 1.25rem;
+
+                    background: $dark-10;
+                    border: 1px solid $dark-15;
+                    border-radius: 0.5rem;
+                }
+
+                .metaItem {
+                    display: flex;
+                    flex-direction: column;
+
+                    gap: 0.75rem;
+
+                    span {
+                        font-size: $fs-16;
+                        color: $grey-50;
+                    }
+
+                    strong {
+                        font-size: $fs-18;
+                        font-weight: $fw-medium;
+                        color: $white;
+                    }
+                }
+
+                // =============================================
+                // DOWNLOAD FORMAT
+                // =============================================
+
+                .metaItemFlex {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    gap: 1rem;
+
+                    .mifColumn {
+                        display: flex;
+                        flex-direction: column;
+
+                        gap: 0.75rem;
+
+                        span {
+                            font-size: $fs-16;
+                            color: $grey-50;
+                        }
+
+                        strong {
+                            font-size: $fs-18;
+                            font-weight: $fw-medium;
+                            color: $white;
+                        }
+                    }
+
+                    .actionBtn {
+                        display: flex;
+
+                        padding: 0.75rem 1rem;
+
+                        background: $dark-08;
+                        border: 1px solid $dark-15;
+                        border-radius: 0.5rem;
+
+                        transition: border-color 0.2s;
+
+                        span {
+                            @include flex-center;
+
+                            gap: 0.75rem;
+
+                            cursor: pointer;
+
+                            font-size: $fs-16;
+                            color: $grey-50;
+                        }
+
+                        img {
+                            width: 1rem;
+                            height: 1rem;
+                        }
+
+                        &:hover {
+                            border-color: $yellow-55;
+                        }
+                    }
+                }
+
+                .metaItemAverage {
+                    display: flex;
+                    flex-direction: column;
+
+                    grid-column: 1 / -1;
+
+                    gap: 0.75rem;
+
+                    span {
+                        font-size: $fs-16;
+                        color: $grey-50;
+                    }
+
+                    strong {
+                        font-size: $fs-18;
+                        font-weight: $fw-medium;
+                        color: $white;
+                    }
+                }
             }
         }
     }

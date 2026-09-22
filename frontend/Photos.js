@@ -7,6 +7,9 @@ import blockchain from '../frontend/vite-project/src/assets/blockchain.png';
 import mental from '../frontend/vite-project/src/assets/mental.png';
 import invest from '../frontend/vite-project/src/assets/invest.png';
 
+import topicsImage from '../frontend/vite-project/src/assets/topicsImage.png';
+import varietyImage from '../frontend/vite-project/src/assets/varietyImage.png';
+
 import john from '../frontend/vite-project/src/assets/john.png';
 import sarah from '../frontend/vite-project/src/assets/sarah.png';
 import astronomer from '../frontend/vite-project/src/assets/astronomer.png';
@@ -26,6 +29,11 @@ import LinkedIn from '../frontend/vite-project/src/assets/linkedIn.svg';
 import btnVideo from '../frontend/vite-project/src/assets/btnVideo.svg';
 import faqIcon from '../frontend/vite-project/src/assets/faqIcon.svg';
 import contactsIcon from '../frontend/vite-project/src/assets/contactsIcon.svg';
+import updates from '../frontend/vite-project/src/assets/updates.svg';
+import contributors from '../frontend/vite-project/src/assets/contributors.svg';
+import readership from '../frontend/vite-project/src/assets/readership.svg';
+import futureIcon from '../frontend/vite-project/src/assets/futureIcon.svg';
+import researchIcon from '../frontend/vite-project/src/assets/researchIcon.svg';
 
 import quantumWaves from '../frontend/vite-project/src/assets/quantumWaves.png';
 import aiRobot from '../frontend/vite-project/src/assets/aiRobot.png';
@@ -35,10 +43,10 @@ import digitalWaves from '../frontend/vite-project/src/assets/digitalWaves.png';
 import iconQuantum from '../frontend/vite-project/src/assets/iconQuantum.svg';
 import iconSpace from '../frontend/vite-project/src/assets/iconSpace.svg';
 
-import avatar from '../frontend/vite-project/src/assets/avatar.svg';
-import avatar1 from '../frontend/vite-project/src/assets/avatar1.svg';
-import avatar2 from '../frontend/vite-project/src/assets/avatar2.svg';
-import avatar3 from '../frontend/vite-project/src/assets/avatar3.svg';
+import avatar1 from '../frontend/vite-project/src/assets/avatar1.png';
+import avatar2 from '../frontend/vite-project/src/assets/avatar2.png';
+import avatar3 from '../frontend/vite-project/src/assets/avatar3.png';
+import avatar4 from '../frontend/vite-project/src/assets/avatar4.png';
 
 import aiRevolutionVideo from '../frontend/vite-project/src/assets/aiRevolutionVideo.png';
 import aiConversationsVideo from '../frontend/vite-project/src/assets/aiConversationsVideo.png';
@@ -49,10 +57,14 @@ import futureOfWork from '../frontend/vite-project/src/assets/futureOfWork.png';
 import aiEducation from '../frontend/vite-project/src/assets/aiEducation.png';
 import aiEntertainment from '../frontend/vite-project/src/assets/aiEntertainment.png';
 
-import bg from '../frontend/vite-project/src/assets/bg.png';
+import alan from '../frontend/vite-project/src/assets/alan.png';
+import diego from '../frontend/vite-project/src/assets/diego.png';
+import emily from '../frontend/vite-project/src/assets/emily.png';
+import sara from '../frontend/vite-project/src/assets/sara.png';
+import raj from '../frontend/vite-project/src/assets/raj.png';
+import jessica from '../frontend/vite-project/src/assets/jessica.png';
 
 export const Photos = {
-    bg,
     DiagonalArrow: diagonalArrow,
     diagonalArrowBlack,
     Logo: logo,
@@ -72,10 +84,30 @@ export const Photos = {
     btnVideo,
     faqIcon,
     contactsIcon,
-    avatar,
-    avatar1,
-    avatar2,
-    avatar3,
+    updates,
+    contributors,
+    readership,
+    futureIcon,
+    researchIcon,
+
+    Avatar: {
+        avatar1,
+        avatar2,
+        avatar3,
+        avatar4,
+    },
+
+    Reviews: {
+        alan,
+        diego,
+        emily,
+        sara,
+        raj,
+        jessica,
+    },
+
+    topicsImage,
+    varietyImage,
 
     Covers: {
         global,
